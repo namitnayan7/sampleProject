@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd"></mule>
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7db42afe-d966-40ec-9490-3d4095d9378f" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<flow name="sampleprojectFlow" doc:id="7710538c-2515-44af-8c99-e0729332b955" >
+		<http:listener doc:name="firstListener" doc:id="6d1b2c10-8885-4ee3-8e75-ee15eeae132c" config-ref="HTTP_Listener_config" path="/v1"/>
+		<set-payload value="Hello, I am Namit kumar nayan" doc:name="Set Payload" doc:id="bd77ea78-ca1f-4207-970c-fa12a98c3aa8" />
+		<logger level="INFO" doc:name="Logger" doc:id="4ca8036d-b020-4280-afc4-f16c62fb565e" message="API passed successfully"/>
+	</flow>
+</mule>
