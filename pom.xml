@@ -40,8 +40,6 @@
 			      <password>${pass}</password>
 			      <applicationName>${appName}</applicationName>
 			      <replicas>${replicas}</replicas>
-      			  <cpu>${cpu}</cpu>
-      			  <memory>${memory}</memory>
 			      <vCores>1</vCores>
 			      <deploymentSettings>
 			        <http>
