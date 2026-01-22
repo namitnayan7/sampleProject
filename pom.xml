@@ -32,9 +32,9 @@
 			  <configuration>
 			    <cloudhub2Deployment>
 			      <uri>https://anypoint.mulesoft.com</uri>
-			      <provider>CH2</provider>
+			      <provider>MC</provider>
 			      <environment>${environment}</environment>
-			      <target>Cloudhub-US-East-2</target>
+			      <target>${targetName}</target>
 			      <muleVersion>${muleVersion}</muleVersion>
 			      <username>${user}</username>
 			      <password>${pass}</password>
