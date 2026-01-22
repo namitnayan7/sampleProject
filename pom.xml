@@ -30,8 +30,7 @@
 			  <version>${mule.maven.plugin.version}</version>
 			  <extensions>true</extensions>
 			  <configuration>
-			  	<deployment>
-			  	  <cloudhub2Deployment>true</cloudhub2Deployment>			    
+			    <cloudhub2Deployment>
 			      <uri>https://anypoint.mulesoft.com</uri>
 			      <provider>MC</provider>
 			      <environment>${environment}</environment>
@@ -41,7 +40,7 @@
 			      <password>${pass}</password>
 			      <applicationName>${appName}</applicationName>
 			      <replicas>${replicas}</replicas>
-				  <cpu>${cpu}</cpu>
+      			  <cpu>${cpu}</cpu>
       			  <memory>${memory}</memory>
 			      <vCores>1</vCores>
 			      <deploymentSettings>
@@ -53,7 +52,7 @@
 			          </inbound>
 			        </http>
 			      </deploymentSettings>
-			    </deployment>
+			    </cloudhub2Deployment>
 			  </configuration>
 			</plugin>
 		</plugins>
